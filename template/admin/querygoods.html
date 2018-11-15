@@ -1,0 +1,71 @@
+<!--内容区域-->
+<div class="content">
+    <div class="contentLeft">
+        <h4 style="padding-left: 20px;">菜单列表</h4>
+        <h5 style="padding-left: 20px;line-height: 2;">栏目管理<i class="iconfont icon-xiasanjiao-copy-copy"></i></h5>
+        <ul class="list-group">
+            <li class="list-group-item"><a href="querygoods.php">查看栏目</a></li>
+            <li class="list-group-item"><a href="insertcategory.php">添加栏目</a></li>
+        </ul>
+        <h5 style="padding-left: 20px;line-height: 2;">商品管理<i class="iconfont icon-xiasanjiao-copy-copy"></i></h5>
+        <ul class="list-group">
+            <li class="list-group-item"><a href="querygoods.php">查看商品</a></li>
+            <li class="list-group-item"><a href="insertgoods.php">添加商品</a></li>
+        </ul>
+        <h5 style="padding-left: 20px;line-height: 2;">推荐位管理<i class="iconfont icon-xiasanjiao-copy-copy"></i></h5>
+        <ul class="list-group">
+            <li class="list-group-item"><a href="querygoods.php">查看推荐位</a></li>
+            <li class="list-group-item"><a href="insertgoods.php">添加推荐位</a></li>
+        </ul>
+    </div>
+    <div class="contentRight">
+        <table class="table">
+            <tr>
+                <th style="text-align:center">商品名称</th>
+                <th style="text-align:center;max-width:10px">商品描述</th>
+                <th style="text-align:center">作者</th>
+                <th style="text-align:center">时间</th>
+                <th style="text-align:center">浏览量</th>
+                <th style="text-align:center">缩略图</th>
+                <th style="text-align:center">操作</th>
+            </tr>
+            <?php  for($i = 0;$i < count($result);$i++){ ?>
+            <tr>
+                <td style="text-align:center"><?php echo $result[$i]['title']; ?></td>
+                <td style="max-width:538px;text-align:center"><?php echo $result[$i]['des']; ?></td>
+                <td style="text-align:center"><?php echo $result[$i]['author']; ?></td>
+                <td style="text-align:center"><?php echo $result[$i]['times']; ?></td>
+                <td style="text-align:center"><?php echo $result[$i]['count']; ?></td>
+                <td style="text-align:center">
+                    <!--<a href="#"><?php echo $result[$i]['thumb']; ?>111</a>-->
+                    <img src="<?php echo $result[$i]['thumb']; ?>" alt="" width="35">
+                </td>
+                <td style="text-align:center">
+                    <button class="btn btn-success"><a href="updategoods.php?gid=<?php echo $result[$i]['gid']?>">修改</a></button>
+                    <button class="btn btn-danger"><a href="deletegoods.php?gid=<?php echo $result[$i]['gid'];?>">删除</a></button>
+                </td>
+            </tr>
+            <?php } ?>
+        </table>
+        <nav aria-label="Page navigation" style="float:right;margin-right: 100px;">
+            <ul class="pagination">
+                <li>
+                    <a href="querygoods.php?pagenum=<?php echo $pagenum==1? 1:$pagenum-1;?>" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <?php for($i= 1;$i<=$size;$i++){?>
+                     <li class="<?php echo $pagenum==$i ? 'active': ''; ?>"><a href="querygoods.php?pagenum=<?php echo $i?>"><?php echo $i?></a></li>
+                <?php }?>
+                <li>
+                    <a href="querygoods.php?pagenum=<?php echo $pagenum==$size ? $size:$pagenum+1?>" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="../static/css/aboutus.css">
+	<img class="about_header" src="../static/img/about_header.JPG" alt="">
+	<!--<img src="https://img20.360buyimg.com/cms/jfs/t25666/116/2294820045/165077/87b2cf8b/5bc83bf8N589b8aab.jpg!q90" alt="">-->
+	<!-- 内容3开始 -->
+	<div class="aboutt">
+		<div class="about">
+			<h3><?php echo $aboutus['title']; ?></h3>
+			<p class="p"><?php echo $aboutus['des']; ?></>
+			<p class="ranger">经营范围:<?php echo $aboutus['ranger']?></p>
+			<!--<script id="container" name="content" type="text/plain" style="min-height:200px"></script>-->
+
+			<p>公司地址：<?php echo $aboutus['address']; ?></p>
+			<p>联系电话：<?php echo $aboutus['phone']; ?></p>
+			<p>电子邮箱：<?php echo $aboutus['email']; ?></p>
+			<img src="../static/img/staticimage.png" alt="">
+		</div>
+	</div>
+	<!-- 内容3结束 -->
+	<!-- 底部开始 -->
+	<?php include_once "footer.php"; ?>
+	<!-- 底部结束 -->

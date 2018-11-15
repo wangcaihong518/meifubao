@@ -1,0 +1,17 @@
+<!--右边推荐开始-->
+<div class="main_right">
+    <div class="m_r_t">
+        <form action="search.php" method="get">
+            <input type="text" placeholder="Search" style="padding: 6px 15px;box-sizing:border-box" name="keywords">
+        </form>
+        <i class="iconfont icon-sousuo2"></i>
+    </div>
+    <h4>为您推荐</h4>
+    <div class="description">
+        <?php for($i=0;$i<5;$i++){?>
+        <p style="margin:0"><a href="#"><?php echo $result[$i]['title']?></a></p>
+        <?php }?>
+    </div>
+    <div class="m_r_b"><a href="#">所有文章</a></div>
+</div>
+<!--右边推荐结束-->

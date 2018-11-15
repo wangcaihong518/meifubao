@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <!--这里的路径是相对于login.php的，即页面打开的最初的那个路径-->
+    <link rel="stylesheet" href="../static/css/login.css">
+
+</head>
+<body>
+    <div class="box">
+        <h3>密码登陆</h3>
+        <!--用表单提交，提交方式为post时验证信息-->
+        <form action="login.php" method="post" enctype="application/x-www-form-urlencoded" >
+            <!--novalidate表单不验证-->
+            <!--entype头信息，-->
+            <input type="text" placeholder="会员名/邮箱/手机号" required pattern="\w{3,10}" name="username">
+            <input type="password" required pattern="[0-9]{5,10}" name="password">
+            <!--这里是提交按钮-->
+            <input type="submit" value="登陆">
+            <!--<input type="submit" value="登陆" formaction="1.php" formenctype="application/x-www-form-urlencoded" formmethod="" formnovalidate>-->
+            <!--按钮中的属性formaction重新的位置。formmethod重新设置方法。formenctype重新设置头信息.formnovalidate重新设置不验证-->
+        </form>
+        <p>
+            <a href="javascript:void()">免费注册</a>
+            <a href="javascript:void()">忘记会员名</a>
+            <a href="javascript:void()">忘记密码</a>
+        </p>
+    </div>
+</body>
+</html>

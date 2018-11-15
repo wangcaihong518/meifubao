@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name = "keywords" content="<?php echo $aboutus['keywords']; ?>">
+    <meta name = "description" content="<?php echo $aboutus['description']; ?>">
+    <title><?php echo $aboutus['title']; ?></title>
+    <link rel="stylesheet" href="../static/css/header.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_608187_nsv3r2f5s6.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/swiper.min.css">
+    <script type="text/javascript" src="../static/js/animate.js"></script>
+    <script type="text/javascript" src="../static/js/jquery-3.3.1.js"></script>
+    <script src="../static/js/info.js"></script>
+    <script src="../ueditor/ueditor.config.js"></script>
+    <script src="../ueditor/ueditor.all.js"></script>
+    <script src="../ueditor/lang/zh-cn/zh-cn.js"></script>
+</head>
+<body>
+<!-- 头部开始 -->
+<div class="header">
+    <div class="header_content">
+        <a href="javascript:void()">
+            <img src="../static/img/login.png" alt="美肤宝" title="美肤宝">
+        </a>
+        <ul class="h_nav">
+            <li><a href="index.php" class="<?php if(!isset($_GET['cid'])){echo 'h_hot';} ?>">网站首页</a></li>
+            <?php for($i=0;$i<count($cate);$i++){?>
+            <li>
+                <!--<?php echo $cate[$i]['module']?>.php-->
+                <a href="list.php?cid=<?php echo $cate[$i]['cid']?>" class="<?php if(isset($_GET['cid'])){echo $_GET['cid']==$cate[$i]['cid']? 'h_hot':'';} ?>"><?php echo $cate[$i]['title']; ?></a>
+            </li>
+            <?php }?>
+        </ul>
+    </div>
+</div>
+<script>
+        // header部分
+        let header = document.querySelector(".header");
+        let header_words = document.querySelectorAll(".header_content > ul.h_nav > li > a");
+        window.onscroll=function(){
+            let bodyTop= document.body.scrollTop || document.documentElement.scrollTop;
+            // 头部导航
+            if(bodyTop > 30){
+                header_words[0].style.color="#16B0DC";
+                header.style.backgroundColor="#FFF";
+                for(let i =0;i<header_words.length;i++){
+                    header_words[i].style.color="#000";
+                    header_words[i].onmouseenter= function(){
+                        for(let j=0;j<header_words.length;j++){
+                            header_words[j].style.color="#000";
+                        }
+                        header_words[i].style.color="#16B0DC";
+                    }
+                    header_words[i].onclick = function(){
+                        for(let j = 0;j<header_words.length;j++){
+                            header_words[j].style.color="#000";
+                        }
+                        header_words[i].style.color="#16B0DC";
+                    }
+                }
+            }else if (bodyTop < 30){
+                header_words[0].style.color="#16B0DC";
+                header.style.backgroundColor="rgba(0,0,0,0.15)";
+                for(let i =0;i<header_words.length;i++){
+                    header_words[i].style.color="#fff";
+                    header_words[i].onmouseenter= function(){
+                        for(let j=0;j<header_words.length;j++){
+                            header_words[j].style.color="#fff";
+                        }
+                        header_words[i].style.color="#16B0DC";
+                    }
+                    header_words[i].onclick = function(){
+                        for(let j = 0;j<header_words.length;j++){
+                            header_words[j].style.color="#fff";
+                        }
+                        header_words[i].style.color="#16B0DC";
+                    }
+                }
+            }
+        }
+</script>
+<!-- 头部结束-->

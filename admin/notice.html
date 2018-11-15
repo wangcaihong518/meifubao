@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--去了lang就不会翻译了-->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>提示</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+</head>
+<style>
+    html,body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-lg-offset-4">
+                <div class="panel panel-<?php echo $type;?>">
+                    <div class="panel-heading">提示</div>
+                    <div class="panel-body" style="min-height: 100px;line-height: 100px;">
+                        <?php echo $message;?>  <span>5</span>s后跳转 <a href="<?php echo $url; ?>">立即跳转</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.onload=function(){
+            let span = document.querySelector("span");
+            let num = span.innerText;
+            let url = document.querySelector("a");
+            setInterval(function(){
+                num--;
+                if(num == 0){
+                    clearInterval();
+                    location.href=url.href;
+                }
+                span.innerText = num;
+            },1000)
+        }
+
+    </script>
+</body>
+</html>

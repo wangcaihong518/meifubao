@@ -1,0 +1,205 @@
+body,div,img,ul,ol,li,h1,h2,h3,h4,h5,h6,p,pre,dl,dt,dd{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+/*title开始*/
+div.title {
+	width: 100%;
+	height: 122px;
+	background-color: #F1F1F1;
+	text-align: center;
+	line-height: 122px;
+}
+.title h3 {
+	width:1170px;
+	height: 122px;
+	margin: 0 auto;
+	color: #F67A82;
+	font-size: 36px;
+	font-weight: normal;
+}
+/*title结束*/
+/*内容开始 */
+.main {
+	width: 100%;
+	background-color: #F2F2F2;
+		margin-bottom: 24px;
+}
+.main div.inner_content {
+	/*height: 897px;*/
+	overflow: hidden;
+}
+.main div.inner_content ul.list {
+	float: left;
+	width: 782px;
+	padding: 31px;
+	box-sizing: border-box;
+	background-color: #FFF;
+	margin-bottom: 21px;
+}
+.main div.inner_content ul.list > li {
+	width: 720px;
+	height: 100%;
+	border-bottom: 1px solid #E4EAEC;
+	overflow: hidden;
+	padding-bottom: 20px;
+}
+.main div.inner_content ul.list > li .left {
+	float: left;
+	width: 38px;
+	height: 100%;
+}
+.main div.inner_content ul.list > li .left img {
+	margin-top: 20px;
+}
+.main div.inner_content ul.list > li .left  i.icon-user-circle {
+	font-size: 38px;
+	color: #A3AFB7;
+}
+.main div.inner_content ul.list > li .right {
+	float: right;
+	width: 675px;
+	height: 100%;
+}
+.main div.inner_content ul.list > li .right h4 {
+	font-size: 14px;
+	color: #34474F;
+	margin: 12px auto;
+}
+.main div.inner_content ul.list > li .right h4 small {
+	float: right;
+	font-size: 9px;
+	color: #A3AFB7;
+}
+.main div.inner_content ul.list > li .right p {
+	font-size: 14px;
+	color: #76839D;
+}
+.main div.inner_content div.more {
+	width: 720px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	background-color: rgb(98, 168, 234);
+	font-size: 14px;
+	color: #76838F;
+	clear: both;
+	margin: 21px auto 0;
+	cursor: pointer;
+}
+.main div.inner_content div.more > i {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	font-size: 20px;
+	line-height: 36px;
+	animation: rotate 1s ease infinite;
+	-webkit-transform-origin: center bottom;
+	-moz-transform-origin: center bottom;
+	-ms-transform-origin: center bottom;
+	-o-transform-origin: center bottom;
+	transform-origin: center bottom;
+}
+.main div.inner_content div.more > i.hidden {
+	display: none;
+}
+@keyframes rotate{
+	form{
+		transform: rotateZ(0deg);
+	}
+	to {
+		transform: rotateZ(360deg);
+	}
+}
+.main div.inner_content .login {
+	float: right;
+	width: 362px;
+	height: 480px;
+	padding: 31px;
+	box-sizing: border-box;
+	background-color: #FFF;
+}
+.main div.inner_content .login input{
+	margin-bottom: 22px;
+	width: 301px;
+	height: 36px;
+	border: 1px solid #E4EAEC;
+	padding: 13px 16px ;
+	box-sizing: border-box;
+	outline: none;
+}
+.main div.inner_content .login textarea {
+	margin-bottom: 22px;
+	border: 1px solid #E4EAEC;
+	padding: 13px 16px ;
+	box-sizing: border-box;
+	outline: none;
+}
+/*.main div.inner_content .login input > [type]*/
+.main div.inner_content .login input[type="submit"]{
+	background-color: #62A8EA;
+	border: none;
+	margin-bottom: 0;
+}
+.main div.inner_content .login p {
+	font-size: 12px;
+	color: #76838f;
+	text-align: center;
+}
+.main div.inner_content .login p span {
+	font-size: 14px;
+	color: red;
+}
+/*内容结束 */
+/*底部上方开始*/
+.null {
+	width: 100%;
+	height: 21px;
+	background-color: #FFF;
+}
+/*底部上方结束*/
+/*底部开始*/
+footer{
+	width: 100%;
+	height: 151px;
+	background-color:#F5F5F5;
+	text-align: center;
+}
+footer >.footer {
+	width: 370px;
+	height: 151px;
+	margin: auto;
+	padding-top: 10px;
+	box-sizing: border-box;
+}
+footer >.footer p {
+	line-height: 28px;
+	font-size: 14px;
+}
+footer >.footer > p > span > a > i {
+	font-size: 27px;
+	text-align: center;
+	line-height: 33px;
+}
+footer >.footer > p > span > a > i.icon-xiangmulan-weixinhao {
+	color: #83B944;
+}
+footer >.footer > p > span > a > i.icon-qq,footer >.footer > p > span > a > i.icon-youxiang1{
+	color: #62BBEE;
+}
+footer >.footer > p:nth-child(2) {
+	color: #62B8EE;
+}
+footer >.footer > p:nth-child(2) > span:nth-child(2) > a img.ga {
+	width: 20px;
+	height: 20px;
+	vertical-align: text-bottom;
+}
+footer >.footer > p.color {
+	color: #AAA;
+}
+/*底部结束*/

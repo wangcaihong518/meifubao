@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="../static/css/info.css">
+	<!-- 内容开始 -->
+	<div class="main">
+		<div class="inner">
+			<div class="left">
+				<h3><?php echo $result['title'] ;?></h3>
+				<p style="margin:10px 0">
+					<span><?php echo substr($result['times'],0,9); ?></span>
+					<span><?php echo $result['author']; ?></span>
+					<span class="counts"><?php echo $result['count']; ?></span>
+				</p>
+				<p><?php echo $result['content']?></p>
+				<ul class="page">
+					<li><?php echo $string1; ?></li>
+					<!--<li><a href="#">上一篇：没有了</a></li>-->
+					<li><?php echo $string; ?></li>
+				</ul>
+
+			</div>
+			<?php include_once "right.php"; ?>
+			<!--<div class="main_right">-->
+				<!--<div class="m_r_t">-->
+					<!--<input type="text" placeholder="Search" style="padding:6px 15px;box-sizing:border-box;">-->
+					<!--<i class="iconfont icon-sousuo2"></i>-->
+				<!--</div>-->
+				<!--<h4>为您推荐</h4>-->
+				<!--<div class="description">-->
+					<!--<?php for($i=0;$i<count($goods);$i++){?>-->
+					<!--<p style="margin:0"><a href="#"><?php echo $goods[$i]['title']?></a></p>-->
+					<!--<?php }?>-->
+				<!--</div>-->
+				<!--<div class="m_r_b"><a href="#">所有文章</a></div>-->
+			<!--</div>-->
+		</div>
+	</div>
+	<!-- 内容结束 -->
+	<!-- footer上方开始 -->
+	<div class="null"></div>
+	<!-- footer上方结束 -->
+	</div>
+	<!-- 内容结束 -->
+	<!-- 底部开始 -->
+<?php include_once "footer.php"; ?>
+	<!-- 底部结束 -->
+
+

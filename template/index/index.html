@@ -1,0 +1,367 @@
+<?php include_once "header.php"?>
+<link rel="stylesheet" href="../static/css/indexpage.css">
+<link rel="stylesheet" href="../static/css/animate.css">
+<link rel="stylesheet" href="../static/swiper-4.4.1.min.css">
+<script src="../static/swiper-4.4.1.min.js"></script>
+<!--<div class="swiper-container">-->
+	<!--<div class="swiper-wrapper">-->
+		<!--<div class="swiper-slide">Slide 1</div>-->
+		<!--<div class="swiper-slide">Slide 2</div>-->
+		<!--<div class="swiper-slide">Slide 3</div>-->
+	<!--</div>-->
+	<!--&lt;!&ndash; 如果需要分页器 &ndash;&gt;-->
+	<!--<div class="swiper-pagination"></div>-->
+
+	<!--&lt;!&ndash; 如果需要导航按钮 &ndash;&gt;-->
+	<!--<div class="swiper-button-prev"></div>-->
+	<!--<div class="swiper-button-next"></div>-->
+
+	<!--&lt;!&ndash; 如果需要滚动条 &ndash;&gt;-->
+	<!--<div class="swiper-scrollbar"></div>-->
+<!--</div>-->
+<!-- banner开始 -->
+<ul class="banner">
+	<li>
+		<?php foreach($result as $v){?>
+			<a href="info.php?cid=<?php echo $v['cid']?>&gid=<?php echo $v['gid']?>">
+				<!--<img src="../static/img/carousel.jpg" alt="">-->
+				<img src="<?php echo $v['thumb']?>" alt="">
+			</a>
+		<?php }?>
+		<!--<a href="#">-->
+			<!--&lt;!&ndash;<img src="../static/img/carousel.jpg" alt="">&ndash;&gt;-->
+			<!--<img src="../static/img/carousel2.jpg" alt="">-->
+		<!--</a>-->
+		<!--<a href="#">-->
+			<!--<img src="../static/img/carousel.jpg" alt="">-->
+			<!--&lt;!&ndash;<img src="../static/img/carousel2.jpg" alt="">&ndash;&gt;-->
+		<!--</a>-->
+	</li>
+	<div class="show zuo"><a href="javascript:;"><i class="iconfont icon-icon__left"></i></a></div>
+	<div class="show you"><a href="javascript:;"></s><i class="iconfont icon-right"></i></a></div>
+	<ul class="btns">
+		<li><a href="javascript:;"></a></li>
+		<li><a href="javascript:;"></a></li>
+	</ul>
+	<p class="des">乐趣多多</p>
+	<p class="des">亭亭玉立、香气悠远</p>
+</ul>
+<!-- banner结束 -->
+<!-- 内容1开始 -->
+<div class="main">
+	<h3 class="animated bounceInDown">
+		<?php echo $cat1[1]['title']?>
+		<div class="more">
+			<div class="m_div_o"></div>
+			<div class="m_div_t">More</div>
+		</div>
+	</h3>
+	<!--<p><?php echo $cat['des']?></p>-->
+	<div class="swiper-container swiper1" style="width: 1170px;height: 530px">
+		<ul class="swiper-wrapper">
+			<?php for($i =0;$i <count($cat2);$i++){?>
+				<li class="swiper-slide">
+					<a href="info.php?cid=<?php echo $cat2[$i]['cid']?>&gid=<?php echo $cat2[$i]['gid']?>">
+					<img src="<?php echo $cat2[$i]['thumb']?>" alt="">
+					<h4><?php echo $cat2[$i]['title']; ?></h4>
+					<p><?php echo $cat2[$i]['des']; ?></p>
+					<div class="app">
+						<i class="iconfont icon-video-camera">
+						<span>查看详情</span>
+						</i>
+					</div>
+					</a>
+			</li>
+			<?php }?>
+		</ul>
+		<a href="javascript:;" class="side left swiper-button-prev">&lsaquo;</a>
+		<a href="javascript:;" class="side right swiper-button-next">&rsaquo;</a>
+	</div>
+
+</div>
+<!-- 内容1结束 -->
+<!-- 内容2开始 -->
+<div class="main_t">
+	<div class="main_t_inner">
+		<h3 class="animated bounceInDown"><?php echo $cat1[2]['title']?>
+			<div class="more">
+				<div class="m_div_o"></div>
+				<div class="m_div_t">More</div>
+			</div>
+		</h3>
+		<ul class="t_list">
+			<!--<?php for($i=0;$i<8;$i++){ ?>-->
+				<!--<li>-->
+					<!--<a href="info.php?cid=<?php echo $goods[$i]['cid']?>&gid=<?php echo $goods[$i]['gid']?>"><img src="<?php echo $goods[$i]['thumb']?>" alt=""></a>-->
+					<!--<div class="t_list_r">-->
+						<!--<h4>-->
+							<!--<?php echo $goods[$i]['title']?>-->
+						<!--</h4>-->
+						<!--<p><?php echo $goods[$i]['des']?></p>-->
+						<!--<p class="t_span"><span><?php echo $goods[$i]['times']?></span><span><?php echo $goods[$i]['author']?></span><span><i class="iconfont icon-yanjing"></i><?php echo $goods[$i]['count']?></span></p>-->
+					<!--</div>-->
+				<!--</li>-->
+			<!--<?php }?>-->
+			<?php for($i=0;$i<8;$i++){ ?>
+			<li>
+				<a href="info.php?cid=<?php echo $cat[$i]['cid']?>&gid=<?php echo $cat[$i]['gid']?>"><img src="<?php echo $cat[$i]['thumb']?>" alt=""></a>
+				<div class="t_list_r">
+					<h4>
+						<?php echo $cat[$i]['title']?>
+					</h4>
+					<p><?php echo $cat[$i]['des']?></p>
+					<p class="t_span"><span><?php echo $cat[$i]['times']?></span><span><?php echo $cat[$i]['author']?></span><span><i class="iconfont icon-yanjing"></i><?php echo $cat[$i]['count']?></span></p>
+				</div>
+			</li>
+			<?php }?>
+			<li>
+		</ul>
+	</div>
+</div>
+<!-- 内容2结束 -->
+<!-- 内容3开始 -->
+<div class="aboutt">
+	<div class="about">
+		<h3><?php echo $aboutus['title']; ?></h3>
+		<p class="p"><?php echo $aboutus['des']; ?></>
+		<p class="ranger">经营范围:<?php echo $aboutus['ranger']?></p>
+		<!--<script id="container" name="content" type="text/plain" style="min-height:200px"></script>-->
+
+		<p>公司地址：<?php echo $aboutus['address']; ?></p>
+		<p>联系电话：<?php echo $aboutus['phone']; ?></p>
+		<p>电子邮箱：<?php echo $aboutus['email']; ?></p>
+		<img src="../static/img/staticimage.png" alt="">
+	</div>
+</div>
+<!-- 内容3结束 -->
+<!-- 底部开始 -->
+<footer>
+	<div class="footer">
+		<p>
+			<span><a href=""><i class="iconfont icon-xiangmulan-weixinhao">&nbsp;&nbsp;</i></a></span>
+			<span><a href=""><i class="iconfont icon-qq">&nbsp;&nbsp;</i></a></span>
+			<span><a href=""><i class="iconfont icon-youxiang1"></i></a></span>
+		</p>
+		<p>
+				<span>
+					<a href="#">豫ICP备17021305号&nbsp;&nbsp;</a>
+				</span>
+			<span>
+					<a href="#"><img class="ga" src="../static/img/gonganbeian.png" alt=""> 豫公网安备 41012202000160号</a>
+				</span>
+		</p>
+		<p class="color">联系电话 0371-62180519  15890062947</p>
+		<p class="color">郑州素馨花卉有限公司 版权所有 © 2017-2021</p>
+	</div>
+</footer>
+<!-- 底部结束 -->
+<!-- 置顶 -->
+<script type="text/javascript" src="../static/js/animate.js"></script>
+<script type="text/javascript" src="../static/js/swiper.min.js"></script>
+<script type="text/javascript">
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 3,
+        autoplay: true,
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+    // 鼠标移入时停止轮播
+    swiper.el.onmouseover = function(){
+        swiper.autoplay.stop();
+    }
+    // header部分
+    // let header = document.querySelector(".header");
+    // let h_nav = document.querySelectorAll(".h_nav li a");
+    // let header_words = document.querySelectorAll(".header_content > ul.h_nav > li > a");
+    // banner图开始
+    // 获取元素
+    let banner_imgs = document.querySelectorAll(".banner > li > a > img");
+    let banner = document.querySelector("ul.banner");
+    let banner_width = parseInt(getComputedStyle(banner,null).width);
+    let lBtn = document.querySelector(".icon-icon__left");
+    let rBtn = document.querySelector(".icon-right");
+    let dots = document.querySelectorAll(".banner .btns li a");
+    let des = document.querySelectorAll(".banner p.des");
+    // 调用函数
+    change(banner_imgs,banner_width,lBtn,rBtn,dots);
+    // 轮播函数
+    function change(banner_imgs,banner_width,lBtn,rBt,dots){
+        let now = 0;
+        let next = 0;
+        let flag = true;
+        let t = setInterval(move,2000);
+        dots[0].classList.add("btns_hot");
+        // des[0].style="z-index:999;bottom:60px";
+        for(let i = 0;i<dots.length;i++){
+            dots[i].onclick = function(){
+                for(let j = 0;j<dots.length;j++){
+                    dots[j].classList.remove("btns_hot");
+					des[j].classList.remove("active");
+                }
+                dots[i].classList.add("btns_hot");
+                des[i].classList.add("active");
+                now = i;
+                next = i;
+            }
+        }
+        function move(){
+            next++;
+            if(next == banner_imgs.length){
+                next = 0;
+            }
+            banner_imgs[now].style.left = 0;
+            banner_imgs[next].style.left = banner_width+"px";
+            animate(banner_imgs[now],{left:-banner_width},function(){
+                dots[now].classList.add("btns_hot");
+                des[now].classList.add("active");
+                flat = true;
+            });
+            animate(banner_imgs[next],{left:0},function(){
+                for(let j = 0;j<dots.length;j++){
+                    dots[j].classList.remove("btns_hot");
+                    des[j].classList.remove("active");
+                }
+                dots[next].classList.add("btns_hot");
+                des[next].classList.add("active");
+                flag = true;
+            });
+            now = next;
+        }
+        lBtn.onclick = function(){
+            if(!flag){
+                return;
+            }
+            flag = false;
+            next--;
+            if(next == -1){
+                next = banner_imgs.length-1;
+            }
+            banner_imgs[now].style.left = 0;
+            banner_imgs[next].style.left = -banner_width+"px";
+            animate(banner_imgs[now],{left:banner_width},function(){
+                dots[now].classList.add("btns_hot");
+                des[now].classList.add("active");
+                flat = true;
+            });
+            animate(banner_imgs[next],{left:0},function(){
+                for(let j = 0;j<dots.length;j++){
+                    dots[j].classList.remove("btns_hot");
+                    des[j].classList.remove("active");
+                }
+                dots[next].classList.add("btns_hot");
+                des[next].classList.add("active");
+                flag = true;
+            });
+            now = next;
+        }
+        rBtn.onclick = function(){
+            if(!flag){
+                return;
+            }
+            flag = false;
+            move();
+        }
+        banner.onmouseover = function(){
+            clearInterval(t);
+        }
+        banner.onmouseout = function(){
+            t = setInterval(move,2000);
+        }
+        window.onblur = function(){
+            clearInterval(t);
+        }
+        window.onfocus = function(){
+            t = setInterval(move,2000);
+        }
+    }
+    // 返回顶部
+    let toTop=document.querySelector(".toTop");
+    // let bodyTop=document.body.scrollTop||document.documentElement.scrollTop;
+    // 素馨花艺
+    var swiper1 = new Swiper('.swiper1', {
+        slidesPerView: 3,
+        autoplay: true,
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+    // js写的
+    let left_list = document.querySelectorAll(".main_t_inner .t_list li:nth-child(2n)");
+    let right_list = document.querySelectorAll(".main_t_inner .t_list li:nth-child(2n+1)");
+    // let list_top = left_list[0].offsetTop;
+    // console.log(list_top);
+    let img = document.querySelectorAll("img");
+    let arr=[];
+    img.forEach(function(val,index){
+        arr.push(val.offsetTop);
+        console.log(val,index);
+
+    });
+    window.onscroll=function(){
+        let bodyTop= document.body.scrollTop || document.documentElement.scrollTop;
+        for(let i=0;i<right_list.length;i++){
+            if(bodyTop>=1000){
+                right_list[i].style.left ="585px";
+                left_list[i].style.left="0px";
+            }else if(bodyTop <1000){
+                right_list[i].style.left ="2000px";
+                left_list[i].style.left="-2000px";
+			}
+
+        }
+        // if(bodyTop >= 30){
+        //     header.style.backgroundColor="#FFF";
+        //     toTop.style.right="10px";
+        //     toTop.style.bottom="10px";
+        //     for(let i=0;i<header_words.length;i++){
+        //         header_words[i].style.color="#000";
+        //     }
+        //     toTop.onclick=function(){
+        //         bodyTop=0;
+        //         animate(document.body,{scrollTop:0});
+        //         animate(document.documentElement,{scrollTop:0});
+        //     }
+        // }else if(bodyTop <30){
+        //     header.style.backgroundColor="rgba(0,0,0,0.15)";
+        //     toTop.style.right="-60px";
+        //     toTop.style.bottom="70px";
+        //     for(let i=0;i<header_words.length;i++){
+        //         header_words[i].style.color="#FFF";
+        //     }
+        //
+        // }
+        // for(let i=0;i<header_words.length;i++){
+        //     header_words[i].onmouseover = function(){
+        //         for(let j=0;j<header_words.lenght;j++){
+        //             header_words[j].style.color="#000";
+        //         }
+        //         header_words[i].classList.add("h_hot");
+        //     }
+        // }
+        arr.forEach(function(vals,indexs){
+            if(bodyTop>=vals){
+                img[indexs].style.opacity=1;
+
+            }
+        });
+
+
+    }
+</script>
+</body>
+</html>
